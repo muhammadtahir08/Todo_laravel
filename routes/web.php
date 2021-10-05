@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/create', function () {
+    return view ('create');
+});
+
+Route::post('/todos', [App\Http\Controllers\HomeController::class, 'create']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
