@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $data = DB::table('Todo')->get();
         //echo $todo;
-        return view('show',["todo"=>$data]);
+        return view('show_',["todo"=>$data]);
     }
 
     public function create(Request $request)

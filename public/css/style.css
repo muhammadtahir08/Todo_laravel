@@ -1,0 +1,168 @@
+/*Preparing*/
+*{padding: 0; margin: 0; list-style: none; outline: none;}
+
+
+
+/*Main*/
+body, html{
+    background: #2f558e;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.wrapper{
+    width: 320px;
+    margin: auto;
+    padding: 9% 0 9% 0;
+}
+::-webkit-input-placeholder{
+    color: #ffffff;
+    font-size: 13px;
+    font-style: italic;
+    font-family: 'open sans', arial, sans-serif;
+    padding-top: 6px;
+    opacity: 0.6;
+}
+input::-moz-placeholder{
+    color: #ffffff;
+    font-size: 13px;
+    font-style: italic;
+    font-family: 'open sans', arial, sans-serif;
+    padding-top: 6px;
+    opacity: 0.6;
+}
+
+
+
+/*ADDING FIELD*/
+.text_field{
+    padding-left: 13px;
+    width: 60%;
+    height: 52px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    border: none;
+    background: #5d626b;
+    color: #ffffff;
+    border-bottom: 1px solid #43d6b0;
+}
+.add_btn {
+    position: absolute;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    height: 53px;
+    width: 115px;
+    background-color: #43d6b0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom: 1px solid #43d6b0;
+}
+
+
+
+
+/*LIST ITEMS*/
+
+/*Tasks*/
+li > label{
+    width: 140px;
+    word-wrap: break-word;
+    float: left;
+    font-size: 15px;
+    margin-top: 4px;
+    margin-left: 80px;
+
+}
+li{
+    background: #52596b;
+    height: 69px;
+    width: 100%;
+    border-bottom: 1px solid #43d6b0;
+    color: #fff;
+    transition: all 0.7s ease;
+    padding: 5px 5px 5px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    border-right: 6px solid;
+}
+li:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*Checkbox*/
+.tasks{
+    position: absolute;
+    margin: 20px 20px;
+    width: 19px;
+    height: 19px;
+    display: block;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+.tasks:before{
+    content:"";
+    width: 19px;
+    height: 19px;
+    border: 1px solid #43d6b0;
+    display: block;
+    position: relative;
+    transition: border 0.7s ease;
+    z-index: 9999;
+}
+.tasks:after{
+    content: "";
+    width: 70px;
+    height: 68px;
+    background: #2C3E50;
+    position: absolute;
+    right: -27px;
+    top: -25px;
+}
+.done:before{
+    background: url("https://s2.postimg.org/rdojm8sqt/done.png") no-repeat center;
+}
+
+/*Remove Button*/
+#tasks_list a{
+    background-color:#de3f53;
+    color:#fff;
+    float:right;
+    font-weight: bold;
+    height:21px;
+    width:22px;
+    margin: 20px 15px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+#tasks_list a:hover{
+    background-color:#fff;
+    color:#de3f53;
+}
+
+#tasks_list li.remove{
+    -webkit-animation: collapse_item 300ms linear;
+    animation: collapse_item 300ms linear;
+    -webkit-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+
+@keyframes collapse_item {
+    0% 		{-ms-transform: rotateX(0deg); transform: rotateX(0deg);}
+    100% 	{-ms-transform: rotateX(-90deg); transform: rotateX(-90deg);}
+}
+
+@-webkit-keyframes collapse_item {
+    0% 		{-webkit-transform: rotateX(0deg);}
+    100% 	{-webkit-transform: rotateX(-90deg);}
+}
